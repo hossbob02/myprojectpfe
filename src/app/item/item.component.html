@@ -1,0 +1,60 @@
+<div class="uk-padding">
+    
+    <form>
+    <fieldset class="uk-fieldset">
+
+        <legend class="uk-legend">Post Job</legend>
+
+        <div class="uk-margin">
+           Titre: <input class="uk-input" type="text" placeholder="Input" name="titre" [(ngModel)]="data.titre" placeholder="Titre">
+        </div>
+
+        <div class="uk-margin">
+           Categorie: <select class="uk-select" name="categorie" [(ngModel)]="data.categorie">
+                <option>Devloppement web</option>
+                <option>Design logo</option>
+                <option>Devloppement Desktop</option>
+                <option>SEO</option>
+                <option>Design banner</option>
+
+
+
+            </select>
+        </div>
+        <div class="uk-margin">
+            Price: <input class="uk-input" type="text" placeholder="Input" name="price" placeholder="0$" [(ngModel)]="data.price" >
+         </div>
+ 
+        <div class="uk-margin">
+           Description: <textarea class="uk-textarea" rows="5" placeholder="Textarea" name="description" [(ngModel)]="data.description" ></textarea>
+        </div>
+        <div class="uk-margin">
+            Photo: <input class="uk-input" type="text" name="photo" [(ngModel)]="data.photo" placeholder="Image Url">
+         </div>
+        <div class="uk-margin">
+            Délai de livraison <select class="uk-select" name="delai_livraison" [(ngModel)]="data.delai_livraison">
+                 <option>1 Day</option>
+                 <option>2 Day</option>
+                 <option>3 Day</option>
+                 <option>1 Week</option>
+                 <option>2 Week</option>
+                 <option>1 Month</option>
+                 <option>2 Month</option>
+                 <option>3 Month</option>
+             </select>
+         </div>
+         <div class="uk-margin">
+            Keywords: <input class="uk-input" type="text" placeholder="Input" name="keywords" [(ngModel)]="data.keywords" >
+         </div>
+         <div class="uk-margin">
+            Instructions pour l'acheteur: <textarea class="uk-textarea" rows="5" placeholder="Textarea" name="instruction_acheteur" [(ngModel)]="data.instruction_acheteur" ></textarea>
+         </div>
+         
+        
+
+    </fieldset>
+    <button class="uk-button uk-button-primary" type="submit" (click)="update(data.titre,data.categorie,data.price,data.description,data.photo,data.delai_livraison,data.keywords,data.instruction_acheteur)">Update</button>
+</form></div>
+
+
+ 

@@ -1,0 +1,57 @@
+
+.tablemargin{
+    width: 90%;
+    background: #204838;
+    margin-top: 40px;
+    border-radius: 18px;
+    height: 220px;
+
+}
+.cordprofile{
+    width: 90%;
+    background: #204838;
+    margin-left: 50px;
+    margin-top: 40px;
+    border-radius: 16px;
+    height: 450px;
+}
+.numberSkills{
+    background: #204838;
+    margin-top: 40px;
+    border-radius: 18px;
+    height: 200px;
+    float: left;
+    width: 40%;
+    margin-left: 48px;
+}
+.histo{
+    background: #204838;
+    margin-top: 40px;
+    border-radius: 18px;
+    height: 200px;
+float: right;
+width: 40%;
+margin-right: 13px;
+}
+.Charge{
+    width: 47%;
+    height: 200px;
+    background: #204838;
+    float: left;
+    margin-top: 60px;
+    border-radius: 18px;
+}
+.Update{
+    width: 47%;
+    height: 200px;
+    background: #204838;
+    float: right;
+    margin-top: 60px;
+    border-radius: 18px;
+
+
+}
+
+
+
+

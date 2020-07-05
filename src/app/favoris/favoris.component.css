@@ -1,0 +1,20 @@
+
+
+.row{
+
+    padding: 20px;
+
+}
+.img_taille{
+    border-radius: 30px;
+    width: 200px;
+    height: 200px;
+}
+.espace{
+    padding: 2px;
+    margin: 2px;
+}
+.item_all{
+
+    padding-top: 5px;
+}

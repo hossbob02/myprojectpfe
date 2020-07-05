@@ -1,0 +1,43 @@
+<div class="uk-padding">
+<table class="uk-table uk-table-hover uk-table-divider ">
+    <thead>
+        <tr>
+            <th style="color: white;">Titre</th>
+            <th style="color: white;">Name</th>
+            <th style="color: white;">Email</th>
+            <th style="color: white;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of itemArray">
+            <td style="color: white;">{{data.titre}}</td>
+            <td style="color: white;">{{data.name | titlecase}} {{data.prenom | titlecase}}</td>
+            <td style="color: white;">{{data.email}}</td>
+            <td><button type="button" class="btn btn-success" onclick="UIkit.notification({message: 'Confirmed..', status: 'success'})" (click)="test(data.$key,data.testAccept,data.titre,data.price,data.categorie,data.description,data.photo,data.keywords,data.email,data.name,data.prenom,data.uid,data.telephone,data.photo_profile,data.instruction_acheteur,data.delai_livraison)">Save</button>
+            <button type="button" class="btn btn-danger" (click)="delete(data.$key)" onclick="UIkit.notification({message: 'Delete Confirmed...', status: 'danger'})">Delete</button>
+            <button type="button" class="btn btn-warning" uk-toggle="target: #modal-close-outside" (click)="detail(data.titre,data.price,data.description,data.photo,data.keywords,data.telephone,data.instruction_acheteur,data.delai_livraison)">Detail</button>
+        </td>
+        
+        </tr>
+       
+    </tbody>
+</table>
+</div>
+<div id="modal-close-outside" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-outside" type="button" uk-close></button>
+        <h2 class="uk-modal-title" style="text-align: center;">{{details.titre}}</h2>
+        <img [src]="details.photo">
+        <h4>Price:</h4>
+        <p>{{details.price | currency}}</p>
+        <h4>Description:</h4>
+        <p style="width: 300px;">{{details.description}}</p>
+        <h4>instruction_acheteur</h4>
+        <p>{{details.instruction_acheteur}}</p>
+        <h4>Keywords:</h4>
+        <p>{{details.keywords}}</p>
+        <h4>Delai Livraison:</h4>
+        <p>{{details.delai_livraison}}</p>
+        
+    </div>
+</div>

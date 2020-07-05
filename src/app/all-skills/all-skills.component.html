@@ -1,0 +1,24 @@
+
+<div class="body">
+  <div class="row">
+      <div *ngFor="let item of itemArray">
+      <div class="col col-12 col-md-6 col-lg-3 item_all "  >
+          <div class="card card_taille" style="width: 18rem; background-color: #204838;">
+              <img [src]="item.photo" class="card-img-top photo_taille" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title" style="color: white;">{{item.titre}}</h5>
+                      <p class="card-text" style="color: white;">{{item.price | currency}}</p><div class="button_position">
+                      <button type="button" class="btn btn-success espace" *ngIf="item.uid!=id" (click)=buy(item.price,item.$key,item.titre,item.description,item.email,item.uid,item.name,item.prenom,item.telephone,item.photo_profile) >BUY</button>
+                      <button type="button" class="btn btn-info espace" (click)="details(item.$key)">DETAILS</button>
+                      <button type="button" class="btn btn-warning espace" *ngIf="item.uid!=id" (click)="AddToFavoris(item.$key,item.titre,item.price,item.description,item.photo)">Favoris</button></div>
+
+
+                  </div>
+           </div>
+      </div>
+  </div>
+  </div>
+  </div>
+  
+  
+  

@@ -1,0 +1,80 @@
+
+<div class="row">
+   <div class="col-md-6">
+      <div class="uk-padding">
+    
+         <form>
+         <fieldset class="uk-fieldset">
+     
+             <legend class="uk-legend" style="color: white;">Post Job</legend>
+     
+             <div class="uk-margin">
+                <span style="color:white">Titre:</span> <input class="uk-input" type="text" placeholder="Input" name="titre" [(ngModel)]="data.titre" placeholder="Titre">
+             </div>
+     
+             <div class="uk-margin">
+               <span style="color: white;">Categorie: </span> <select class="uk-select" name="categorie" [(ngModel)]="data.categorie">
+                     <option>Devloppement web</option>
+                     <option>Design logo</option>
+                     <option>Devloppement Desktop</option>
+                     <option>SEO</option>
+                     <option>Design banner</option>
+     
+     
+     
+                 </select>
+             </div>
+             <div class="uk-margin" style="color: white;">
+                 Price: <input class="uk-input" type="number" placeholder="Input" name="price" placeholder="0$" [(ngModel)]="data.price" >
+              </div>
+      
+             <div class="uk-margin" style="color: white;">
+                Description: <textarea class="uk-textarea" rows="5" placeholder="Textarea" name="description" [(ngModel)]="data.description" ></textarea>
+             </div>
+             <div class="uk-margin" style="color: white;">
+                 Photo: <input class="uk-input" type="text" name="photo" [(ngModel)]="data.photo" placeholder="Image Url">
+                  (Add your image URL Format="jpg/jpeg/png")
+               </div>
+             <div class="uk-margin" style="color: white;">
+                 Délai de livraison <select class="uk-select" name="delai_livraison" [(ngModel)]="data.delai_livraison">
+                      <option>1 Day</option>
+                      <option>2 Day</option>
+                      <option>3 Day</option>
+                      <option>1 Week</option>
+                      <option>2 Week</option>
+                      <option>1 Month</option>
+                      <option>2 Month</option>
+                      <option>3 Month</option>
+                  </select>
+              </div>
+              <div class="uk-margin" style="color: white;">
+                 Keywords: <input class="uk-input" type="text" placeholder="Input" name="keywords" [(ngModel)]="data.keywords" >
+              </div>
+              <div class="uk-margin" style="color: white;">
+                 Instructions pour l'acheteur: <textarea class="uk-textarea" rows="5" placeholder="Textarea" name="instruction_acheteur" [(ngModel)]="data.instruction_acheteur" ></textarea>
+              </div>
+              
+             
+     
+         </fieldset>
+         <button class="uk-button uk-button-primary" type="submit" style="background-color: #204838;" (click)="insertskill()">ADD Skill</button>
+     </form></div>
+   </div>
+   <div class="col-m-6">
+      <div class="col col-12 col-md-6 col-lg-3 item_all "  >
+         <div class="card card_taille" style="width: 18rem;">
+             <img [src]="data.photo" class="card-img-top photo_taille" alt="...">
+                 <div class="card-body">
+                     <h5 class="card-title">{{data.titre}}</h5>
+                     <p class="card-text">{{data.price | currency}}</p><div class="button_position">
+                     <button type="button" class="btn btn-success espace" >BUY</button>
+                     <button type="button" class="btn btn-info espace" >DETAILS</button>
+                     <button type="button" class="btn btn-warning espace" >Favoris</button></div>
+
+
+                 </div>
+          </div>
+     </div>
+
+   </div>
+</div>

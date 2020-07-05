@@ -1,0 +1,72 @@
+
+<div >
+  <nav class="navbar navbar-expand-lg navbar-light fixed-left" style="background-color:#204838">
+   
+    <img src="assets/img/logo.png" />
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="" style="color: white;" *ngIf="!testEmail && !testEmail">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white;" routerLink="profil/{{dataUserr.name}}{{dataUserr.prenom}}/{{uid}}" *ngIf="isUser && !testEmail" >Profil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="myskills" style="color: white;" *ngIf="isUser && !testEmail"  >My Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dashboard" style="color: white;" *ngIf="isUser && testEmail"  >Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="users" style="color: white;" *ngIf="isUser && testEmail"  >Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="skillsmanager" style="color: white;" *ngIf="isUser && testEmail"  >Skills Manager</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="allskills" style="color: white;" *ngIf="isUser && !testEmail"  >Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="addskills" style="color: white;"  *ngIf="isUser && !testEmail" >Add Skills</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" style="color: white;" *ngIf="isUser && !testEmail"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Manager
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#204838">
+            <a class="dropdown-item" routerLink="orders" style="color: white;">Orders</a>
+            <a class="dropdown-item" routerLink="purchases" style="color: white;">purchases</a>
+
+          </div>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" routerLink="favoris" style="color: white;" *ngIf="isUser && !testEmail"  >Favoris</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link btn btn-success" style="color: white;" routerLink="login" *ngIf="!isUser" >Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-info" style="color: white;" routerLink="register" *ngIf="!isUser" >Register</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link btn btn-danger " style="color: white;" href="#" (click)="logout()" *ngIf="isUser">Logout</a>
+        </li>
+        
+      </ul>
+     <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>-->
+     <div *ngIf="isUser" class="identiteprofile"><h3 style="color: white;">{{dataUserr.name | titlecase}} {{dataUserr.prenom | titlecase}}</h3></div> 
+      <img [src]="dataUserr.photo" alt="..." class="rounded-circle taille_photo_profile" *ngIf="isUser">
+
+    </div>
+  </nav>
+</div>
+  <!--navbar admin started here-->
+ 

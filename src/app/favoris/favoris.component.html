@@ -1,0 +1,17 @@
+<div class="body">
+    <div class="row">
+        <div *ngFor="let item of itemArray">
+        <div class="col col-12 col-md-6 col-lg-3 item_all" *ngIf="item.uid===uId" >
+            <div class="card" style="width: 18rem;">
+                <img [src]="item.photo" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.titre}}</h5>
+                        <p class="card-text">{{item.price | currency}}</p>
+                        <button type="button" class="btn btn-info espace" (click)="details(item.key)">DETAILS</button>
+                        <button type="button" class="btn btn-danger espace" (click)="onDelete(item.$key)">DELETE</button> 
+                    </div>
+             </div>
+        </div>
+    </div>
+    </div>
+    </div>

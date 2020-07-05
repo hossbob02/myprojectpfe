@@ -1,0 +1,162 @@
+
+
+<div class="row" style="padding: auto;">
+    <div class="col-6 colorrr">
+        <div class="cordprofile">
+        <img [src]="dataUser.photo" style="width: 200px;
+        height: 200px;
+        margin-left: 204px;
+        margin-right: 204px;
+        margin-top: 35px;" alt="..." class="rounded-circle photoprofilepush">
+        <h3 style="text-align: center; color:white; font-family: monospace;">{{dataUser.name | titlecase}} {{dataUser.prenom | titlecase}}</h3>
+        <h4 style="text-align: center; color:white;">Feedback({{dataUser.feedback}}%)</h4>
+        <h4 style="text-align: center; color:white;">Solde({{dataUser.solde}}$)</h4>
+    </div>
+    <div class=" numberSkills"  >
+      <img src="assets/img/skillsnumber.png" style="width: 200px;
+      height: 150px;
+      margin-left: 30px;" alt="">
+      <h4 style="text-align: center; margin: 0px; color: white;">2 Skills</h4>
+    </div>
+    <div class=" histo">
+      <img src="assets/img/history.png" style="width: 200px;
+      height: 188px;
+      margin: 0px;
+      margin-left: 31px;
+      margin-top: -16px;
+      " alt="">
+     <h4 style="text-align: center; margin: -24px; color: white;">History</h4>
+    </div>
+    
+    </div>
+    <div class="col-6 colorrrr">
+        <div class="tablemargin">
+        <table class="table table-borderless tablePositionProfile">
+            <tbody>
+              <tr>
+                <th scope="row" style="color:white; text-decoration: none;">Name:</th>
+                <td style="font-family: unset; color: white;">{{dataUser.name | titlecase}}</td>
+              </tr>
+              <tr>
+                <th scope="row" style="color:white;">Prenom:</th>
+                <td style="font-family: unset; color: white;">{{dataUser.prenom}}</td>
+              </tr>
+              <tr>
+                <th scope="row" style="color: white;">Telephone:</th>
+                <td style="font-family: unset; color: white;">{{dataUser.telephone | titlecase}}</td>
+              </tr>
+              
+              <tr>
+                <th scope="row" style="color: white;">Email:</th>
+                <td style="font-family: unset; color: white;">{{dataUser.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="chargeUpdate" style="margin-top: -24px;">
+          <div class="Charge">
+            <img src="assets/img/charge.png" style="width: 107px;
+            margin-left: 86px;
+            margin-right: 86px;
+            margin-top: 21px;
+            height: 105px;" alt="">
+            <button style="text-align: center;
+            margin: 0;
+            margin-top: 20px; 
+            color: white;
+            margin-left: 60px;
+            font-size: x-large;
+            border: 2px solid #ffffff;
+            border-radius: 20px;" class="uk-button uk-button-default" href="#mmodal-sections" uk-toggle *ngIf="usersession">Charge</button>
+            
+
+          </div>
+          <div class="Update">
+            <img src="assets/img/update.png" style="width: 103px;
+            margin-left: 90px;
+            margin-top: 18px;" alt="">
+           <!-- <h4 style="text-align: center;
+            margin: 0;
+            margin-top: 25px; color: #1a4254;">Update</h4>-->
+            <button class="uk-button uk-button-default uk-margin-small-right" style="margin: 0;
+            margin-top: 25px;
+            margin-left: 67px;
+            color: white;
+            font-size: x-large;
+            border: 2px solid #ffffff;
+            border-radius: 20px;" type="button" uk-toggle="target: #modal-example" *ngIf="usersession">Update</button>
+
+
+          </div>
+          
+        </div>
+        <div class="anyext" style="    width: 100%;
+        height: 200px;
+        background: #204838;
+        margin-top: 319px;
+        border-radius: 18px;"></div>
+        </div>
+       
+    </div>
+    
+   
+
+</div>
+
+
+<!-- This is the modal for update -->
+<div id="modal-example" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+      <h2 class="uk-modal-title">Update Profile</h2>
+      <!--form-->
+      <form>
+        <div class="form-group">
+            <label for="formGroupPrenomInput">Name:</label>
+            <input name="name" type="text" [(ngModel)]="dataProfileUpdate.name"  class="form-control" id="formGroupNameInput" placeholder="Name" required>
+        </div>
+          <div class="form-group">
+            <label for="formGroupPrenomInput">Prenom:</label>
+            <input type="text" name="prenom" [(ngModel)]="dataProfileUpdate.prenom"  class="form-control" id="formGroupNameInput" placeholder="Prenom" required>
+          </div>   
+        <div class="form-group">
+          <label for="formGroupTelephoneInput">telephone:</label>
+          <input type="text"  class="form-control" [(ngModel)]="dataProfileUpdate.telephone"  name="telephone" id="formGroupTelephoneInput" placeholder="numero de telephone en tunisie 8 chiffre" required minlength="8" maxlength="8">
+      </div> 
+      <div class="form-group">
+        <label for="formGroupTelephoneInput">Photo:</label>
+        <input type="text"  class="form-control" [(ngModel)]="dataProfileUpdate.photo"  name="photo" id="formGroupphotoInput">
+    </div>  
+
+       
+      </form>
+      <!--form-->
+      <p class="uk-text-right">
+          <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+          <button class="uk-button uk-button-primary" type="submit"  (click)="update()">Save</button>
+      </p>
+  </div>
+</div>
+<!-- This is the modal for update -->
+<!--this is the modal for solde-->
+
+<div id="mmodal-sections" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Charge Your Account</h2>
+        </div>
+        <div class="uk-modal-body">
+          <form>
+            <div class="form-group">
+              <label for="formGroupsoldeInput">Solde:</label>
+              <input type="text" class="form-control" [(ngModel)]="dataProfileUpdate.solde"  name="telephone" id="formGroupSoldeInput" placeholder="Solde 0$"/>
+          </div> 
+          </form>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button" (click)="updateSolde()">Save</button>
+        </div>
+    </div>
+</div>
+
+<!--this is the modal for solde-->

@@ -1,0 +1,27 @@
+
+
+
+<div class="uk-position-center">
+    <form #f="ngForm" (ngSubmit)="login(f)">
+        <div class="uk-margin logologin">
+            <div class="uk-inline">
+                <img src="assets/img/adminlogin.png" />
+            </div>
+        </div>
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" ngModel #email="ngModel" type="text" name="email" >
+            </div>
+        </div>
+    
+        <div class="uk-margin">
+             <div class="uk-inline">
+                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                <input class="uk-input" ngModel type="password" #password="ngModel" name="password">
+            </div>
+        </div>
+        <button class="uk-button uk-button-primary" style="width: 95%;
+        background: #003a5d;" type="submit">Login!</button> &nbsp;
+    </form>
+    </div>

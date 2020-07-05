@@ -1,0 +1,31 @@
+.postuserprofile{
+    color:#4bc33a;
+    
+    }  
+.card{
+    padding-top: 80px;
+}    
+.titre_item_detail{
+    color:#1a4254
+
+
+}
+.photoprofilepush{
+width: 150px;
+height: 150px; 
+margin-left:58px;
+margin-right:50px ;   
+}
+.nameprofilepush{
+    text-align: center;
+}
+.pushpush{
+background: #204838;
+
+}
+.textpushbio{
+
+    width: 255px;
+    text-align: center;
+
+}

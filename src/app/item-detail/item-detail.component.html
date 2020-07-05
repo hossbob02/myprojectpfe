@@ -1,0 +1,33 @@
+<div class="card text-center">
+    <div class="card-header">
+      <h1 class="titre_item_detail">{{data.titre}}</h1>
+    </div>
+    <div class="card-body">
+      <a uk-toggle="target: #offcanvas-push">
+      <h2 class="card-title postuserprofile">{{dataUser.name | titlecase  }} {{dataUser.prenom | titlecase  }}</h2></a>
+      <img [src]="data.photo" />
+      <p class="card-text">{{data.description}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      {{data.delai_livraison}} ago
+    </div>
+  </div>
+  <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true" >
+    <div class="uk-offcanvas-bar pushpush">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <img [src]="dataUser.photo" alt="..." class="rounded-circle photoprofilepush">
+       <!-- <img [src]="dataUser.photo" class="photoprofilepush" />-->
+        <h3 class="nameprofilepush">{{dataUser.name | titlecase  }} {{dataUser.prenom | titlecase  }}</h3>
+        
+<h4 class="nameprofilepush">{{dataUser.telephone}}</h4>
+        <p class="textpushbio">{{dataUser.bio}}</p>
+        <div class="nameprofilepush">
+          <button class="uk-button uk-button-primary" (click)="goprofile(dataUser.name,dataUser.prenom,dataUser.uid)">Voir Profile</button>
+
+        </div>          
+
+
+
+    </div>
+</div>

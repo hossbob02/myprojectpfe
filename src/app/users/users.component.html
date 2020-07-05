@@ -1,0 +1,32 @@
+
+
+
+<div class="uk-padding">
+    <table class="uk-table uk-table-divider">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Feedback</th>
+                <th>Solde</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of usersArray">
+                <td><img [src]="data.photo_profile" style="width: 50px; height: 50px;"/></td>
+                <td>{{data.name | titlecase}} {{data.prenom | titlecase}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.feedback}}</td>
+                <td>{{data.solde}}</td>
+                <td><button class="uk-margin-small-right" uk-icon="camera" target="_blank" (click)="show(data.name,data.prenom,data.uid)"></button><a class="uk-margin-small-right" uk-icon="trash" onclick="UIkit.notification({message: 'Delete Confirmed...', status: 'danger'})" (click)="delete(data.$key)"></a></td>
+
+      
+      
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
