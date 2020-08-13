@@ -9,6 +9,10 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./all-skills.component.css']
 })
 export class AllSkillsComponent implements OnInit {
+  dataCategorie={
+    categorie:'All categorie'
+  }
+   allcategorie='All categorie'
   data={
     titre:'',
     categorie:'',
@@ -88,7 +92,10 @@ export class AllSkillsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+  affichecat(){
+console.log(this.dataCategorie.categorie)
+
+  }  
   onEdit(key){
     
     this.route.navigate(['/item/'+key])
@@ -134,6 +141,7 @@ export class AllSkillsComponent implements OnInit {
         telephoneUserPost:telephone,
         photo_profile:photopost
 
+        
       })
       this.OrdersList=this.db.list('orders')
       this.OrdersList.push({

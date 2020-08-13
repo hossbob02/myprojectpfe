@@ -17,6 +17,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { SkillsManagerComponent } from './skills-manager/skills-manager.component';
+import { AuthGuard } from './services/guards/auth.guard';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -26,8 +27,8 @@ const routes: Routes = [
   {path:'myskills',component:MySkillsComponent},
   {path:'allskills',component:AllSkillsComponent},
   {path:'addskills',component:AddSkillsComponent},
-  {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
+  {path:'login',component:LoginComponent,canActivate:[AuthGuard]},
+  {path:'register',component:RegisterComponent,canActivate:[AuthGuard]},
   {path:'item/:id',component:ItemComponent},
   {path:'item-detail/:id',component:ItemDetailComponent},
   {path:'purchases', component:PurchasesComponent},
@@ -38,11 +39,6 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'users',component:UsersComponent},
   {path:'skillsmanager',component:SkillsManagerComponent}
-
-
-
-
-
 
 ];
 

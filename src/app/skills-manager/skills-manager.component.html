@@ -10,10 +10,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let data of itemArray">
-            <td style="color: white;">{{data.titre}}</td>
+            <td style="color: white; width: 300px;">{{data.titre}}</td>
             <td style="color: white;">{{data.name | titlecase}} {{data.prenom | titlecase}}</td>
             <td style="color: white;">{{data.email}}</td>
-            <td><button type="button" class="btn btn-success" onclick="UIkit.notification({message: 'Confirmed..', status: 'success'})" (click)="test(data.$key,data.testAccept,data.titre,data.price,data.categorie,data.description,data.photo,data.keywords,data.email,data.name,data.prenom,data.uid,data.telephone,data.photo_profile,data.instruction_acheteur,data.delai_livraison)">Save</button>
+            <td><button type="button" class="btn btn-success" onclick="UIkit.notification({message: 'Confirmed..', status: 'success'})" (click)="test(data.$key,data.testAccept,data.titre,data.price,data.categorie,data.description,data.photo,data.keywords,data.email,data.name,data.prenom,data.uid,data.telephone,data.photo_profile,data.instruction_acheteur,data.delai_livraison)">Accept</button>
             <button type="button" class="btn btn-danger" (click)="delete(data.$key)" onclick="UIkit.notification({message: 'Delete Confirmed...', status: 'danger'})">Delete</button>
             <button type="button" class="btn btn-warning" uk-toggle="target: #modal-close-outside" (click)="detail(data.titre,data.price,data.description,data.photo,data.keywords,data.telephone,data.instruction_acheteur,data.delai_livraison)">Detail</button>
         </td>

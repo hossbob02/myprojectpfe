@@ -25,6 +25,7 @@ export class MySkillsComponent implements OnInit {
   uId:any
   itemList:AngularFireList<any>;
 itemArray=[]
+veriflength:boolean
   constructor(public db:AngularFireDatabase,public route:Router,public routes:ActivatedRoute,private afauth:AngularFireAuth) { 
     this.itemList=db.list('skills')
     this.itemList.snapshotChanges().subscribe(
@@ -40,6 +41,12 @@ itemArray=[]
       }
     )
       this.uId=this.afauth.auth.currentUser.uid
+ console.log(this.itemArray.length)
+ if(this.itemArray.length!==0){
+  this.veriflength=true
+}else{
+  this.veriflength=false
+}
   }
 
   ngOnInit(): void {

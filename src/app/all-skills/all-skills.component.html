@@ -1,8 +1,25 @@
 
 <div class="body">
-  <div class="row">
+    <div class="uk-margin uk-padding">
+        <span style="color: white;">Categorie: </span> <select class="uk-select" name="categorie" [(ngModel)]="dataCategorie.categorie">
+            <option>All categorie</option>  
+            <option>Devloppement web</option>
+            <option>Devloppement mobile</option>
+              <option>Design logo</option>
+              <option>Devloppement Desktop</option>
+              <option>SEO</option>
+              <option>Design banner</option>
+              <option>Cuisine</option>
+              <option>Translate</option>
+
+
+
+
+          </select>
+      </div>
+  <div class="row"> 
       <div *ngFor="let item of itemArray">
-      <div class="col col-12 col-md-6 col-lg-3 item_all "  >
+      <div class="col col-12 col-md-6 col-lg-3 item_all " *ngIf="item.categorie===dataCategorie.categorie || dataCategorie.categorie===allcategorie " >
           <div class="card card_taille" style="width: 18rem; background-color: #204838;">
               <img [src]="item.photo" class="card-img-top photo_taille" alt="...">
                   <div class="card-body">

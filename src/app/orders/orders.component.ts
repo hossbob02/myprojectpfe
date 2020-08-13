@@ -26,7 +26,7 @@ export class OrdersComponent implements OnInit {
     prenom:'',
     $key:'',
     uid:'',
-    solde:''
+    solde:0
   }
     ordersList:AngularFireList<any>;
     newuserList:AngularFireList<any>;
@@ -90,7 +90,7 @@ this.newuserList.snapshotChanges().subscribe(
       })
       
       this.newuserList.update(this.postdataUser.$key,{
-        solde:this.postdataUser.solde+price
+        solde:(Number(price)+Number(this.postdataUser.solde))
       })
       this.routes.navigate(['/profil/'+this.postdataUser.name+this.postdataUser.prenom+'/'+this.postdataUser.uid])
   }
